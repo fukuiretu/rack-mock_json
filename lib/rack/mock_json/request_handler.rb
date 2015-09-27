@@ -7,25 +7,29 @@ module Rack
       end
 
       def call(env)
-        if path_info(env) == '/hoge'
-          content = '{"hoge": "foo"}'
-          [
-            200,
-            {
-              "Content-Type"           => "application/json",
-              "Content-Length"         =>  content.bytesize.to_s,
-              "X-XSS-Protection"       => "1; mode=block",
-              "X-Content-Type-Options" => "nosniff",
-              "X-Frame-Options"        => "SAMEORIGIN"
-            },
-            [content]
-          ]
-        else
-          @app.call(env)
-        end
+        mock_element = @mock.mock_element(request_path(env))
+
+        return @app.call(env) if mock_element.nil?
+
+        [
+          mock_element.status,
+          {
+            
+            "Content-Type"           => "application/json",
+            "Content-Length"         =>  mock_element.content.bytesize.to_s,
+            "X-XSS-Protection"       => "1; mode=block",
+            "X-Content-Type-Options" => "nosniff",
+            "X-Frame-Options"        => "SAMEORIGIN"
+          },
+          [mock_element.content]
+        ]
       end
 
       private
+
+        def request_path(env)
+          "#{request_method(env)} #{path_info(env)}"
+        end
 
         def path_info(env)
           env["PATH_INFO"]
