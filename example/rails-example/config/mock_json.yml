@@ -1,0 +1,5 @@
+- :request_path: 'GET /hoge/.*/foo'
+  :content: '{ "hoge": "foo", "bar" : "fuga" }'
+- :request_path: 'POST /user'
+  :status: 201
+  :content: '{ "name": "taro", "age" : 17 }'
