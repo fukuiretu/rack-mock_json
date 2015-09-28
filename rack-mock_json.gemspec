@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["fukuiretu"]
   spec.email         = ["s0232101@gmail.com"]
 
-  spec.summary       = %q{Rack app}
-  spec.description   = %q{Rack app}
+  spec.summary       = %q{any request in the rack layer, returns any json response(Content-Type: application/json) and http status.}
+  spec.description   = %q{any request in the rack layer, returns any json response(Content-Type: application/json) and http status.}
   spec.homepage      = "https://github.com/fukuiretu/rack-mock_json"
   spec.license       = "MIT"
 
