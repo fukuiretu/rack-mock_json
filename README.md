@@ -30,6 +30,8 @@ end
 
 ```
 
+[Examples For more information, click here](example/rails-example/config/environments/development.rb)
+
 ### Config
 
 ```yaml
@@ -39,6 +41,9 @@ end
   :status: 201
   :content: '{ "name": "taro", "age" : 17 }'
 ```
+
+[Examples For more information, click here](example/rails-example/config/mock_json.yml)
+
 
 
 ## License
