@@ -44,6 +44,22 @@ end
 
 [Examples For more information, click here](example/rails-example/config/mock_json.yml)
 
+| Propety        | Required     | Default     |
+| :------------- | :------------| :-----------|
+| request_path   | ○            | -           |
+| status         | ×            | 200         |
+| content        | ○            | -           |
+
+
+
+## Future
+- randomly pick the content you specify multiple.
+
+
+
+## ToDo
+- spec & CI
+
 
 
 ## License
