@@ -1,5 +1,8 @@
 rack-mock_json
 ====================
+[![Gem Version](https://badge.fury.io/rb/rack-mock_json.svg)](http://badge.fury.io/rb/rack-mock_json)
+
+
 
 ## Overview
 `rack-mock_json` is for any request in the rack layer, returns any json response(Content-Type: application/json) and http status.
@@ -25,7 +28,7 @@ gem 'rack-mock_json'
 ```ruby
 Rails.application.configure do
   # ...
-  config.middleware.use Rack::MockJson::RequestHandler, config_file_path: "#{config.root}/config/mock_json.yml"
+  config.middleware.use Rack::MockJson::Middleware, config_file_path: "#{config.root}/config/mock_json.yml"
 end
 
 ```

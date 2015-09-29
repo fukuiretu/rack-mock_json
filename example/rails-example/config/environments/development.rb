@@ -39,5 +39,5 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  config.middleware.use Rack::MockJson::RequestHandler, config_file_path: "#{config.root}/config/mock_json.yml"
+  config.middleware.use Rack::MockJson::Middleware, config_file_path: "#{config.root}/config/mock_json.yml"
 end
