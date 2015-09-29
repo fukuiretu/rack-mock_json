@@ -38,11 +38,11 @@ end
 ### Config
 
 ```yaml
-- :request_path: 'GET /hoge/.*/foo'
-  :content: '{ "hoge": "foo", "bar" : "fuga" }'
-- :request_path: 'POST /user'
-  :status: 201
-  :content: '{ "name": "taro", "age" : 17 }'
+- request_path: 'GET /hoge/.*/foo'
+  content: '{ "hoge": "foo", "bar" : "fuga" }'
+- request_path: 'POST /user'
+  status: 201
+  content: '{ "name": "taro", "age" : 17 }'
 ```
 
 [Examples For more information, click here](example/rails-example/config/mock_json.yml)

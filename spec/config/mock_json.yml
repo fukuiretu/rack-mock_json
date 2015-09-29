@@ -1,2 +1,2 @@
-- :request_path: 'GET /hoge'
-  :content: '{ "hoge": "foo", "bar" : "fuga" }'
+- request_path: 'GET /hoge'
+  content: '{ "hoge": "foo", "bar" : "fuga" }'

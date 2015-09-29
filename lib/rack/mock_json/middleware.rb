@@ -14,7 +14,6 @@ module Rack
         [
           mock_element.status,
           {
-
             "Content-Type"           => "application/json",
             "Content-Length"         =>  mock_element.content.bytesize.to_s,
             "X-XSS-Protection"       => "1; mode=block",

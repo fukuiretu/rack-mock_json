@@ -6,7 +6,7 @@ module Rack
       end
 
       def mock_element(path)
-        element = @config.find { |e| path.match(/#{e[:request_path]}/).present? }
+        element = @config.find { |e| path.match(/#{e["request_path"]}/).present? }
         return nil if element.blank?
 
         element = Hashie::Mash.new(element)
