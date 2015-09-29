@@ -1,7 +1,7 @@
 rack-mock_json
 ====================
 [![Gem Version](https://badge.fury.io/rb/rack-mock_json.svg)](http://badge.fury.io/rb/rack-mock_json)
-
+[![Circle CI](https://circleci.com/gh/fukuiretu/rack-mock_json.svg?style=svg)](https://circleci.com/gh/fukuiretu/rack-mock_json)
 
 
 ## Overview
