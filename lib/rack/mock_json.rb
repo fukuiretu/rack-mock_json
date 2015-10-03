@@ -6,4 +6,5 @@ require "hashie"
 
 require "rack/mock_json/middleware"
 require "rack/mock_json/mock"
+require "rack/mock_json/element"
 require "rack/mock_json/version"

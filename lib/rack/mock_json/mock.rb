@@ -9,9 +9,11 @@ module Rack
         element = @config.find { |e| path.match(/#{e["request_path"]}/).present? }
         return nil if element.blank?
 
-        element = Hashie::Mash.new(element)
-        element.status ||= 200
-        element
+        Element.new(
+          request_path: element['request_path'],
+          contents: element['contents'],
+          status: element['status'] ? element['status'] : 200
+        )
       end
     end
   end

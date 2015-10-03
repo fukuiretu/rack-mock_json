@@ -1,2 +1,4 @@
 - request_path: 'GET /hoge'
-  content: '{ "hoge": "foo", "bar" : "fuga" }'
+  contents:
+    - '{ "hoge": "foo", "bar" : "fuga" }'
+    - '{ "name": "taro", "year" : 17 }'
