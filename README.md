@@ -38,30 +38,34 @@ end
 ### Config
 
 ```yaml
-- request_path: 'GET /hoge/.*/foo'
-  content: '{ "hoge": "foo", "bar" : "fuga" }'
+- request_path: 'GET /users'
+  contents:
+    - '{ "name": "retu", "age" : "20" }'
+    - '{ "name": "jane", "age" : "25" }'
 - request_path: 'POST /user'
   status: 201
-  content: '{ "name": "taro", "age" : 17 }'
+  contents:
+    - '{ "name": "taro", "age" : 17 }'
 ```
 
+If you have multiple elements specified in the `contents`, and then picked up at random. Also, if you specify the `mock_element_index=i` in parameter, and it returns a particular element.
+
+Ex.
+
+```sh
+$ curl http://localhost:3000/users -X GET -d "mock_element_index=0"
+{ "name": "retu", "age" : "20" }
+$ curl http://localhost:3000/users -X GET -d "mock_element_index=1"
+{ "name": "jane", "age" : "25" }
+```
+
+| Propety        | Required     | Default     | Remarks            |
+| :------------- | :------------| :-----------| :------------------|
+| request_path   | ○            | -           | Use the regular expression |
+| status         | ×            | 200         | HTTP Status |
+| contents       | ○            | -           | Body Content |
+
 [Examples For more information, click here](example/rails-example/config/mock_json.yml)
-
-| Propety        | Required     | Default     |
-| :------------- | :------------| :-----------|
-| request_path   | ○            | -           |
-| status         | ×            | 200         |
-| content        | ○            | -           |
-
-
-
-## Future
-- randomly pick the content you specify multiple.
-
-
-
-## ToDo
-- spec & CI
 
 
 

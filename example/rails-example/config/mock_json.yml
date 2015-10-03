@@ -1,5 +1,8 @@
-- request_path: 'GET /hoge/.*/foo'
-  content: '{ "hoge": "foo", "bar" : "fuga" }'
+- request_path: 'GET /users'
+  contents:
+    - '{ "name": "retu", "age" : "20" }'
+    - '{ "name": "jane", "age" : "25" }'
 - request_path: 'POST /user'
   status: 201
-  content: '{ "name": "taro", "age" : 17 }'
+  contents:
+    - '{ "name": "taro", "age" : 17 }'

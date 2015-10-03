@@ -11,8 +11,8 @@ describe Rack::MockJson::Middleware do
   end
 
   describe "#call" do
-    it "/hoge" do
-      get("/hoge")
+    it 'return 200' do
+      get("/hoge", { mock_element_index: 0 })
 
       body = last_response.body
       status = last_response.status
@@ -21,6 +21,16 @@ describe Rack::MockJson::Middleware do
       expect(body).to have_json_path("bar")
       expect(body).to be_json_eql("foo".to_json).at_path("hoge")
       expect(body).to be_json_eql("fuga".to_json).at_path("bar")
+      expect(status).to eq(200)
+    end
+
+    it 'return 200' do
+      get("/hoge")
+
+      body = last_response.body
+      status = last_response.status
+
+      expect(body.nil?).to eq(false)
       expect(status).to eq(200)
     end
   end
